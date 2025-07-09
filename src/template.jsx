@@ -40,17 +40,17 @@ const template = () => {
   const formik = useFormik({
     initialValues: {
       firstName: '',
+      middleName: '',
       lastName: '',
       email: '',
       password: '',
       confirmPassword: '',
-      phone: '',
+      phone: '', 
+      country: '',
+      city: '',
+      postalCode: '',
       address1: '',
       address2: '',
-      city: '',
-      state: '',
-      postalCode: '',
-      country: '',
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
@@ -77,6 +77,19 @@ const template = () => {
           onBlur={formik.handleBlur}
           error={formik.touched.firstName && Boolean(formik.errors.firstName)}
           helperText={formik.touched.firstName && formik.errors.firstName}
+        />
+
+        <TextField
+          fullWidth
+          margin="normal"
+          id="middleName"
+          name="middleName"
+          label="Middle Name"
+          value={formik.values.middleName}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          error={formik.touched.middleName && Boolean(formik.errors.middleName)}
+          helperText={formik.touched.middleName && formik.errors.middleName}
         />
 
         <TextField
@@ -183,19 +196,6 @@ const template = () => {
           onBlur={formik.handleBlur}
           error={formik.touched.city && Boolean(formik.errors.city)}
           helperText={formik.touched.city && formik.errors.city}
-        />
-
-        <TextField
-          fullWidth
-          margin="normal"
-          id="state"
-          name="state"
-          label="State / Province"
-          value={formik.values.state}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          error={formik.touched.state && Boolean(formik.errors.state)}
-          helperText={formik.touched.state && formik.errors.state}
         />
 
         <TextField
