@@ -1,10 +1,10 @@
 import React from 'react';
-import template from './template';
+import Template from './template'
 
 function App() {
   return (
     <div style={{ padding: '2rem' }}>
-      <template />
+      <Template />
     </div>
   );
 }

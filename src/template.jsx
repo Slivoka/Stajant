@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 
 const validationSchema = yup.object({
   firstName: yup.string().required('First name is required'),
+  middleName: yup.string().required('Middle name is required'),
   lastName: yup.string().required('Last name is required'),
   email: yup
     .string('Enter your email')
@@ -28,7 +29,6 @@ const validationSchema = yup.object({
   address1: yup.string().required('Address Line 1 is required'),
   address2: yup.string(), // optional
   city: yup.string().required('City is required'),
-  state: yup.string().required('State/Province is required'),
   postalCode: yup
     .string()
     .matches(/^\d+$/, 'Postal Code must be numeric')
@@ -36,7 +36,7 @@ const validationSchema = yup.object({
   country: yup.string().required('Country is required'),
 });
 
-const template = () => {
+const Template = () => {
   const formik = useFormik({
     initialValues: {
       firstName: '',
@@ -237,4 +237,4 @@ const template = () => {
     </Box>
   );
 };
-export default template;
+export default Template;
